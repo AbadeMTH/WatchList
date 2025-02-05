@@ -6,7 +6,7 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView>
       <StatusBar />
-      <Text fontPreset="headingLarge" bold>
+      <Text fontPreset="headingMedium">
         Hello World! This is my text component in React Native
       </Text>
     </SafeAreaView>

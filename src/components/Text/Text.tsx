@@ -5,13 +5,16 @@ import {
   TextStyle,
 } from 'react-native';
 
+//Interface that extends the native TextProps and adds the personal properties
 interface TextProps extends RNTextProps {
   fontPreset?: TextVariants;
   bold?: boolean;
   italic?: boolean;
+  //Native TextStyle properties
   style?: TextStyle;
 }
 
+//A type that defines the possible values for the fontPreset prop
 type TextVariants =
   | 'headingLarge'
   | 'headingMedium'
@@ -20,6 +23,7 @@ type TextVariants =
   | 'paragraphMedium'
   | 'paragraphSmall';
 
+//The Text component that receives, the children, the fontPreset prop and applies the corresponding style
 export function Text({
   children,
   fontPreset = 'headingLarge',
@@ -36,6 +40,7 @@ export function Text({
   );
 }
 
+//Function that returns the font family based on the bold and italic props
 function getFontFamily(bold?: boolean, italic?: boolean) {
   switch (true) {
     case bold:
@@ -47,6 +52,7 @@ function getFontFamily(bold?: boolean, italic?: boolean) {
   }
 }
 
+//Objects that contains the font sizes for each variant and font family's
 const $fontSizes: Record<TextVariants, TextStyle> = {
   headingLarge: {fontSize: 26, lineHeight: 32},
   headingMedium: {fontSize: 18, lineHeight: 22},
